@@ -13,3 +13,5 @@ COPY environment.yml /tmp/environment.yml
 RUN mamba env update -n base -f /tmp/environment.yml && \
     rm /tmp/environment.yml && \
     mamba clean -a -y 
+
+USER jovyan
