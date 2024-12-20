@@ -10,9 +10,6 @@ RUN apt-get update && apt-get install -y \
 
 # Download environment.yml to tmp, install packages, then cleanup
 COPY environment.yml /tmp/environment.yml
-RUN mamba env update -n notebook -f /tmp/environment.yml && \
+RUN mamba env update -n base -f /tmp/environment.yml && \
     rm /tmp/environment.yml && \
-    mamba clean -a -y
-    
-# Switch to jovyan user
-USER jovyan
+    mamba clean -a -y 
