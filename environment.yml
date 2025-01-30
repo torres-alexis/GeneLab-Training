@@ -1,16 +1,15 @@
-name: GL4U_Intro_JNs_2024
+name: notebook
 channels:
   - conda-forge
   - bioconda
   - defaults
   - r
-
 dependencies:
-  - python==3.10
-  - bash_kernel==0.9.3
-  - r-irkernel==1.3.2
-  - coreutils==9.5
-  - r-base==4.4.1
-  - r-tidyverse==2.0.0
-  - fastqc==0.12.1
-  - multiqc==1.24.1
+  - python=3.11
+  - bash_kernel=0.9.3
+  - coreutils=9.5
+  - r-base=4.4.2
+  - r-irkernel=1.3.2
+  - r-tidyverse=2.0.0
+  - fastqc=0.12.1
+  - multiqc=1.26

@@ -8,9 +8,9 @@ RUN apt-get update && apt-get install -y \
     bsdmainutils \
     && rm -rf /var/lib/apt/lists/*
 
-# Download environment.yml to tmp, install packages, then cleanup
+# Download environment.yml to tmp, install packages, then clean up
 COPY environment.yml /tmp/environment.yml
-RUN mamba env update -n base -f /tmp/environment.yml && \
+RUN mamba env update -n notebook -f /tmp/environment.yml && \
     rm /tmp/environment.yml && \
     mamba clean -a -y 
 
