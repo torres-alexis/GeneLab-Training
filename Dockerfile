@@ -14,4 +14,8 @@ RUN mamba env update -n notebook -f /tmp/environment.yml && \
     rm /tmp/environment.yml && \
     mamba clean -a -y 
 
+# Install additional R packages
+RUN conda run -n notebook R -e "\
+install.packages('tidyverse', dependencies = TRUE, repos='https://cran.rstudio.com/');"
+
 USER jovyan
