@@ -1,17 +1,20 @@
 FROM public.ecr.aws/smce/smce-images:smce-oss-earth-base-03544260
 
-# Packages installed on top of the OSS Earth base image:
+# System dependencies
     # wget
     # bsdmainutils
 
+# Conda dependencies
+    # python==3.10
     # bash_kernel==0.9.3
     # coreutils==9.5
-    # r-base==4.4.2
+    # r-base==4.4.1
     # r-irkernel==1.3.2
     # fastqc==0.12.1
     # multiqc==1.24.1
 
-    # tidyverse==2.0.0 installed via R installation - Conda hosted tidyverse 2.0.0 installation failed on several systems 
+# R dependencies (installed via R due to issues with updated conda package availability or installation)
+    # tidyverse
 
 
 USER root
