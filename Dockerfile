@@ -3,6 +3,56 @@ FROM public.ecr.aws/smce/smce-images:smce-oss-earth-base-03544260
 USER root
 ENV TZ=America/Los_Angeles
 
+# System dependencies
+    # many misc packages required for installing / compiling packages - RSEM, fgsea, etc.
+    # wget
+    # zlib1g-dev
+
+# Conda dependencies
+    # python==3.10
+    # pip
+    # bash_kernel==0.9.3
+    # r-irkernel
+    # coreutils
+    # htslib
+    # openssl
+    # nodejs
+    # r-base==4.4.1
+    # r-biocmanager==1.30.25
+    # r-tidyverse==2.0.0
+    # r-ggfortify==0.4.17
+    # r-ggnewscale==0.5.0
+    # star==2.7.11b
+    # cutadapt==4.9
+    # trim-galore==0.6.10
+    # fastqc==0.12.1
+    # multiqc==1.24.1
+    # samtools==1.21
+    # pip:
+        # git+https://github.com/torres-alexis/dp_tools.git@1.3.5-rc.4
+
+# R dependencies (installed via R due to issues with updated conda package availability or installation)
+    # tidyverse
+    # bioconductor:
+        # tximport
+        # DESeq2
+        # org.Mm.eg.db
+        # org.At.tair.db
+        # org.Ce.eg.db
+        # org.Dr.eg.db
+        # org.Dm.eg.db
+        # org.Hs.eg.db
+        # org.Rn.eg.db
+        # org.Sc.sgd.db
+        # STRINGdb
+        # PANTHER.db
+        # ComplexHeatmap
+        # EnhancedVolcano
+        # clusterProfiler
+        # goseq
+        # fgsea
+        # enrichplot
+
 # Install system dependencies
 RUN sudo apt-get update && sudo apt-get install -y \
     libcurl4-openssl-dev \
@@ -58,13 +108,6 @@ RUN wget https://github.com/deweylab/RSEM/archive/v1.3.3.tar.gz && \
     sudo make install && \
     cd .. && \
     rm -rf RSEM-1.3.3 v1.3.3.tar.gz
-
-# Add RSEM to PATH
-ENV PATH="/usr/local/bin:${PATH}"
-
-# Configure R
-RUN mkdir -p ~/.R && \
-    echo "options(repos = c(CRAN = 'https://cloud.r-project.org'))" > ~/.Rprofile
 
 # Install additional R packages
 RUN conda run -n gl4u_rnaseq_2024 R -e "\
