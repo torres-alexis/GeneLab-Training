@@ -33,6 +33,7 @@ ENV TZ=America/Los_Angeles
 
 # R dependencies (installed via R due to issues with updated conda package availability or installation)
     # tidyverse
+    # tidyHeatmap
     # bioconductor:
         # tximport
         # DESeq2
