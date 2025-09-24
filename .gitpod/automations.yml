@@ -77,7 +77,6 @@ services:
     name: Jupyter Lab Server
     description: A local Jupyter Lab instance for running the GL4U RNAseq notebooks
     triggeredBy:
-      - postDevcontainerStart
       - manual
     commands:
       start: >-
