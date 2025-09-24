@@ -2,15 +2,6 @@
   "name": "GeneLab RNAseq Training",
   "image": "quay.io/nasa_genelab/gl4u:gl4u_rnaseq",
   
-  "forwardPorts": [8888],
-  "portsAttributes": {
-    "8888": {
-      "label": "Jupyter",
-      "requireLocalPort": true,
-      "onAutoForward": "ignore"
-    }
-  },
-  
   "customizations": {
     "vscode": {
       "extensions": [
