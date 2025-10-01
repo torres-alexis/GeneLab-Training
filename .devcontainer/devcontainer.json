@@ -1,6 +1,6 @@
 {
   "name": "GeneLab RNAseq Training",
-  "image": "quay.io/nasa_genelab/gl4u:gl4u_rnaseq",
+  "image": "quay.io/nasa_genelab/gl4u:gl4u_rnaseq_2025",
   
   "customizations": {
     "vscode": {
@@ -9,7 +9,7 @@
         "ms-toolsai.jupyter"
       ],
       "settings": {
-        "python.defaultInterpreterPath": "/home/gitpod/miniconda3/envs/gl4u_rnaseq_2024/bin/python"
+        "python.defaultInterpreterPath": "/home/gitpod/miniconda3/envs/gl4u_rnaseq/bin/python"
       }
     }
   }
