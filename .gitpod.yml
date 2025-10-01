@@ -4,9 +4,6 @@ tasks:
   - name: Setup Environment and Start Jupyter Lab
     init: echo "Initializing environment..."
     command: |
-      # Install dp_tools 1.3.9
-      pip install git+https://github.com/torres-alexis/dp_tools.git@1.3.9
-      
       # Set and export workDir
       export workDir="/workspace/GeneLab-Training/RNAseq"
       echo "export workDir=\"/workspace/GeneLab-Training/RNAseq\"" >> ~/.bashrc
