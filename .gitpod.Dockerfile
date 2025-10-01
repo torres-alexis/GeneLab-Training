@@ -87,10 +87,7 @@ RUN conda run -n gl4u_rnaseq R -e "\
         'PANTHER.db', \
         'ComplexHeatmap', \
         'EnhancedVolcano', \
-        'clusterProfiler', \
-        'goseq', \
-        'fgsea', \
-        'enrichplot' \
+        'fgsea' \
     ), ask = FALSE); \
     install.packages('tidyHeatmap', dependencies = TRUE);"
 
